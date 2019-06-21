@@ -1,0 +1,405 @@
+/* Web Fonts & Fonts */
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('fonts/Proxima Nova Alt Regular-webfont.eot');
+    src: url('fonts/Proxima Nova Alt Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Proxima Nova Alt Regular-webfont.woff2') format('woff2'),
+         url('fonts/Proxima Nova Alt Regular-webfont.woff') format('woff'),
+         url('fonts/Proxima Nova Alt Regular-webfont.ttf') format('truetype'),
+         url('fonts/Proxima Nova Alt Regular-webfont.svg#proxima_nova_altregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'proxima_nova_ltsemibold';
+    src: url('fonts/Proxima Nova Semibold-webfont.eot');
+    src: url('fonts/Proxima Nova Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Proxima Nova Semibold-webfont.woff2') format('woff2'),
+         url('fonts/Proxima Nova Semibold-webfont.woff') format('woff'),
+         url('fonts/Proxima Nova Semibold-webfont.ttf') format('truetype'),
+         url('fonts/Proxima Nova Semibold-webfont.svg#proxima_nova_ltsemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'futura_icgregular';
+    src: url('fonts/futura_icg-webfont.woff2') format('woff2'),
+         url('fonts/futura_icg-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'montserratsemibold';
+    src: url('fonts/montserrat-semibold-webfont.woff2') format('woff2'),
+         url('fonts/montserrat-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Reset */
+
+* {outline: none; box-sizing: border-box; -webkit-overflow-scrolling: touch}
+a {text-decoration: none; cursor: pointer;}
+body, html, h1, h2, h3, h4, h5, h6, p, header, footer, div, article, section, aside {padding: 0; margin: 0; position: relative;}
+body, html {height: 100%;}
+input, select, textarea, button {outline: 0; border: 0; appearance: none; -webkit-appearance: none; -moz-appearance: none; -o-appearance: none;}
+
+/* Common Classes */
+.wid100 {width:100%; float: left; }
+.fleft {float: left;}
+.fright {float: right;}
+.listn {list-style: none; margin: 0; padding: 0;}
+.defimg {width: 100%; height: auto;}
+.defimg2 {width: auto; height: auto;}
+.coverimg {width: 100%; height: 100%; object-fit: cover;}
+.containimg {width: 100%; height: 100%; object-fit: contain;}
+.pagewrapper {width: 100%;  margin: 0 auto; max-width: 1366px; padding: 0 25px;}
+.pagewrapper2 {width: 100%; margin: 0 auto; max-width: 990px;}
+img {@extend .defimg}
+.close {width: 35px; height: 35px; background: url(../images/iconset1.png) no-repeat right -35px; position: absolute; right: 10px; top: 10px;}
+.flex {  
+  display: -webkit-box;  
+  display: -moz-box; 
+  display: -ms-flexbox;  
+  display: -webkit-flex;  
+  display: flex;  
+  -webkit-flex-flow: row wrap;  
+  justify-content: flex-start;  
+  flex-wrap: wrap;
+}
+
+/* Colors & Fonts */
+$fontmain: 'futura_icgregular', Arial, sans-serif;
+$fonthead: 'proxima_nova_ltsemibold', Arial, sans-serif;
+$fontlink: 'Proxima Nova', Arial, sans-serif;
+$fontcat: 'montserratsemibold', Arial, sans-serif;
+
+/* Colors */
+$white: #fff;
+$yellowgreen: #77bb53;
+$orange: #e48810;
+$lightgreen: #d0cc3a;
+$transorange: rgba(228,136,16,0.7);
+$translightgreen: rgba(194,205,35,0.7);
+$transblack: rgba(0,0,0,0.6);
+$textgray: #353535;
+$darkgray: #2d2d2d;
+
+/* body { height: 100vh; overflow-y: hidden;} */
+
+
+.sec-1 { overflow: hidden;
+  .span-hldr { @extend .flex; width: 100%; height: 100vh; position: relative; z-index: 2;
+    span { display: block; width: 25%; height: 100%;}
+    span:first-of-type {     background: url(../images/1.jpg); background-size: cover; background-repeat: no-repeat; background-position: right center; -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */ filter: grayscale(100%);
+    }
+
+    span:first-of-type:hover { -webkit-filter: grayscale(0); filter: grayscale(0); }
+
+    span:nth-of-type(2) { background: orange}
+    span:nth-of-type(3) { background: maroon}
+    span:nth-of-type(4) { background: red}
+  }
+
+
+
+
+  .page-hldr { position: absolute; top: 0; left: 0; width: 100%; height: 100%; @extend .flex;
+    .content { display: none;
+      .hldr { opacity: 0;}
+    }
+    .content-1, .content-2, .content-3, .content-4 { padding: 60px 30px; padding-left: calc(25% + 30px); }
+  }
+
+}
+
+
+
+.span-hldr.tab-1-active {
+  .tab2, .tab3, .tab4 { animation: 1s tab1slides ease-in-out forwards; }
+}
+
+.span-hldr.tab-2-active {
+  .tab1, .tab2 { animation: slides-2-1 1s ease-in-out forwards;}
+  .tab3, .tab4 { animation: slides-2-2 1s ease-in-out forwards;}
+}
+
+.span-hldr.tab-3-active {
+  .tab1, .tab2, .tab3 { animation: slides-3 1s ease-in-out forwards;}
+  .tab4 { animation: slides-3_1 1s ease-in-out forwards; }
+}
+
+.span-hldr.tab-4-active {
+  .tab1, .tab2, .tab3, .tab4 { animation: slides-4 1s ease-in-out forwards;}
+  
+}
+
+
+
+.page-hldr.tab-1-active {
+  .content-1 { display: block; z-index: 3;
+    .hldr { animation: .5s ease-in-out slide-up forwards; animation-delay: 1s;}
+
+  }
+}
+
+.page-hldr.tab-2-active {
+  .content-2 { display: block; z-index: 3;
+    .hldr { animation: .5s ease-in-out slide-up forwards; animation-delay: 1s;}
+  }
+}
+
+.page-hldr.tab-3-active {
+  .content-3 { display: block; z-index: 3;
+    .hldr { animation: .5s ease-in-out slide-up forwards; animation-delay: 1s;}
+  }
+}
+
+.page-hldr.tab-4-active {
+  .content-4 { display: block; z-index: 3;
+    .hldr { animation: .5s ease-in-out slide-up forwards; animation-delay: 1s;}
+  }
+}
+
+
+
+
+.span-hldr.back1 {
+  .tab2, .tab3, .tab4 { animation: 1s tab1slides-back ease-in-out forwards; }
+}
+
+.span-hldr.back2 {
+  .tab1, .tab2 { animation: 1s tab1slides-back2 ease-in-out forwards; }
+  .tab3, .tab4 { animation: 1s tab1slides-back2-1 ease-in-out forwards; }
+}
+
+.span-hldr.back3 {
+  .tab1, .tab2, .tab3 { animation: slides-3-back 1s ease-in-out forwards;}
+  .tab4 { animation: slides-3-back_1 1s ease-in-out forwards; }
+}
+
+.span-hldr.back4 {
+  .tab1, .tab2, .tab3, .tab4 { animation: slides-4b 1s ease-in-out forwards;}
+}
+
+
+
+
+@keyframes tab1slides {
+  from {
+    transform: translate(0, 0)
+  }
+  to {
+    transform: translate(300%, 0)
+  }
+}
+
+
+@keyframes tab1slides-back {
+  from {
+    transform: translate(300%, 0) 
+  }
+  to {
+    transform: translate(0, 0)
+  }
+}
+
+
+@keyframes slides-2-1 {
+  from {
+    transform: translate(0, 0)
+  }
+  to {
+    transform: translate(-100%, 0)
+  }
+}
+
+@keyframes slides-2-2 {
+  from {
+    transform: translate(0, 0)
+  }
+  to {
+    transform: translate(200%, 0)
+  }
+}
+
+@keyframes tab1slides-back2 {
+  from {
+    transform: translate(-100%, 0)
+  }
+  to {
+    transform: translate(0, 0)
+  }
+}
+
+@keyframes tab1slides-back2-1 {
+  from {
+    transform: translate(200%, 0)
+  }
+  to {
+    transform: translate(0, 0)
+  }
+}
+
+
+@keyframes slides-3 {
+  from {
+    transform: translate(0, 0)
+  }
+  to {
+    transform: translate(-200%, 0)
+  }
+}
+
+@keyframes slides-3_1 {
+  from {
+    transform: translate(0, 0)
+  }
+  to {
+    transform: translate(100%, 0)
+  }
+}
+
+
+@keyframes slides-3-back {
+  from {
+    transform: translate(-200%, 0)
+  }
+  to {
+    transform: translate(0, 0)
+  }
+}
+
+@keyframes slides-3-back_1 {
+  from {
+    transform: translate(100%, 0)
+  }
+  to {
+    transform: translate(0, 0)
+  }
+}
+
+@keyframes slides-4 {
+  from {
+    transform: translate(0, 0)
+  }
+  to {
+    transform: translate(-300%, 0)
+  }
+}
+
+@keyframes slides-4b {
+  from {
+    transform: translate(-300%, 0)
+  }
+  to {
+    transform: translate(0, 0)
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translate(0, 40px)
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.back-btns {position: absolute; right: 30px; bottom: 40px;}
+
+
+.sec-1 { overflow: hidden;
+  .span-hldr { @extend .flex; width: 100%; height: 100vh; position: relative; z-index: 2;
+    span { display: block; width: 25%; height: 100%;}
+    span:first-of-type { background: pink}
+    span:nth-of-type(2) { background: orange}
+    span:nth-of-type(3) { background: maroon}
+    span:nth-of-type(4) { background: red}
+
+    .animate1 { animation: slide-right 1s ease-in-out forwards;}
+    .tab { transform: translate(0, 0); transition: 1s ease-in-out;}
+    .none1 {  animation: none-1 1s forwards ease-in-out;}
+
+  }
+
+
+  .page-hldr { position: absolute; top: 0; left: 0; width: 100%; height: 100%; @extend .flex;
+    .close-btn { position: absolute; right: 30px; bottom: 40px; position: absolute;}
+    .content { display: none;}
+    .content-1 { padding: 60px 30px; padding-left: calc(25% + 30px); }
+    .content.active {display: block; z-index: 3;}
+  }
+
+}
+
+
+
+
+@keyframes slide-right {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(300%, 0);
+  }
+}
+
+@keyframes none-1 {
+  from {
+    transform: translate(300%, 0);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+} */
+
